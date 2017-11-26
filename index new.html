@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+
+    <!--<script src="node_modules/jquery/src/jquery.js"></script>-->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <link href="node_modules/devtron/vendor/photon/css/photon.css" rel="stylesheet" />
+    <link href="node_modules/devtron/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="custom.js"></script>
+
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+    <meta charset="UTF-8">
+    <title class="titlebar">Electron Task</title>-->
+
+    <style>
+    </style>
+
+
+
+
+</head>
+<body>
+    <!--<input width="" />-->
+
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <!--<h1 class="title"></h1>-->
+
+            <div class="toolbar-actions">
+
+                <!--<input type="text" style="margin-left:10px">-->
+                <div class="form-inline">
+                    <label style="float:left; margin-right:20px;font-size:20px">
+                        CrossOver
+                    </label>
+                    <!--<button class="btn btn-default">
+                        <span class="icon icon-cog" style="margin-top:-6px;font-size:16px"> </span>
+                        <span class="icon icon-cog" style="margin-bottom:-10px;margin-left:-4px; font-size:14px"></span>
+                    </button>-->
+
+
+                    <div class="form-inline" style="right:0px; float:right">
+
+                        <span class="fa fa-cogs" aria-hidden="true" style="padding-right:5px"> </span>
+
+
+                        <span class="fa fa-bar-chart" aria-hidden="true" style="padding-right:5px"></span>
+
+
+                        <span class="fa fa-window-minimize" aria-hidden="true" style="padding-right:5px"></span>
+
+
+                        <span class="fa fa-window-close" aria-hidden="true" style="padding-right:5px" onclick=""></span>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
+        </header>
+
+
+        <div class="window-content">
+            <!--<div><br /><br /></div>-->
+            <div class="pane-group" style="background-color:black; padding-top:20px">
+                <!--<span class="icon icon-cancel-circled"></span>-->
+
+                <div class="pane" style="margin-left:20px">
+                    <span class="icon icon-record" style="color:#4cff00">
+                        <label style="color:floralwhite;margin-left:20px">
+                            Md. Alim Ul Karim
+                        </label>
+                    </span>
+                    <div class="inline" style="margin-left:32px;color:floralwhite">0h 20 m</div>
+                </div>
+
+                <!--play icons below-->
+
+                <div id="playAction" class="pane-one-third sidebar" onclick="playToStop();"
+                     style="background-color:black">
+
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size:40px;color:#9ff722; background-color:black"></i>
+
+
+
+                </div>
+
+                <!--stop icons below-->
+
+                <div id="stopAction" class="pane-one-third sidebar" onclick="stopToPlay()"
+                     style="visibility:hidden; position: absolute; margin-top: -100px; margin-left: -100px;background-color:black">
+
+
+                    <i class="fa fa-stop-circle-o" aria-hidden="true" style="font-size:40px;color:#9ff722; background-color:black"></i>
+
+
+                </div>
+
+                <!--play and stop icons above-->
+            </div>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+
+</html>
+<script>
+
+
+    var IdClear;
+    function playToStop() {
+
+        setImmediate(captureScreen);
+
+        IdClear = setInterval(captureScreen, 60000);
+        console.log(IdClear);
+
+       
+
+        jQuery("#playAction").css({
+            'visibility': 'hidden',
+            'position': 'absolute',
+            'margin-top': '-100px',
+            'margin-left': '-100px'
+        });
+
+
+        jQuery("#stopAction").css({
+            'visibility': 'visible',
+            'position': 'static',
+            'margin-top': '0px',
+            'margin-left': '0px'
+        });
+
+        IdClear = setInterval(captureScreen, 6000);
+        console.log(IdClear);
+
+    }
+
+
+
+
+    //}
+
+    function stopToPlay() {
+        console.log("IdClear____");
+        console.log(IdClear);
+        clearInterval(IdClear);
+        
+
+        //console.log("b");
+        //return 0;
+
+        jQuery("#stopAction").css({
+            'visibility': 'hidden',
+            'position': 'absolute',
+            'margin-top': '-100px',
+            'margin-left': '-100px'
+        });
+
+        jQuery("#playAction").css({
+            'visibility': 'visible',
+            'position': 'static',
+            'margin-top': '0px',
+            'margin-left': '0px'
+        });
+
+
+        console.log(" AT stopAction");
+        return 0;
+
+    }
+
+    //function togglePlayStop(action) {
+
+
+    //    if (action === "playAction") {
+
+    //        //jQuery("#playAction").addClass("playStopMakeHidden");
+
+
+
+    //        //jQuery("#playAction").ad(".playStopMakeHidden");
+
+    //        // jQuery("#stopAction").addClass("playStopMakeVisible");
+    //        //jQuery("#stopAction").css(".playStopMakeVisible");
+
+
+    //    }
+    //    if (action === "stopAction") {
+    //        //jQuery("#stopAction").addClass("playStopMakeHidden");
+
+
+
+    //    }
+
+
+    //    //var a = 12;
+    //    //console.log(a);
+    //    //return 0;
+    //}
+
+    function test() {
+
+        console.log("At test");
+        return;
+    }
+
+    //function request() {
+    //    http.get(options, function (res) {
+    //        res.on('data', function (chunk) {
+    //            console.log(chunk);
+    //        });
+    //    }).on("error", function (e) {
+    //        console.log("Got error: " + e.message);
+    //    });
+    //}
+
+
+    //var now = moment().format("D-MMM-YY HH:mm");
+
+
+    //var count = 0;
+
+    //setInterval(captureScreen, 6000, now, ++count);
+
+    //captureScreen(now, count) = captureScreen(4 - Oct - 17 21:43, 1)
+
+    //problem is here count is always 1.
+    //so if date is same as previous then increment cookie count(count = count + 1);
+    //and then store in cookie.count value and now value.captureScreen(now, count)
+
+</script>
+
+
+
+

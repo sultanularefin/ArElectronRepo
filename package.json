@@ -1,0 +1,12 @@
+{
+  "name": "ArefinElectron",
+  "version": "0.1.0",
+  "main": "main.js",
+  "devDependencies": {
+    "devtron": "^1.4.0"
+  },
+  "dependencies": {
+    "tray-windows": "^1.0.1"
+  },
+  "optionalDependencies": {}
+}
