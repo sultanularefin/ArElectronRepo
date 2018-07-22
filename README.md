@@ -1,6 +1,5 @@
 # ArElectronRepo
 
-by **Md. Sultanul Arefin.** 
 
 # This is An app made with Electron. 
 
@@ -9,3 +8,7 @@ by **Md. Sultanul Arefin.**
 [Twitter](https://twitter.com/mdsultanul).
 
 [LinkedIn](https://linkedin.com/in/mdarefin28/).
+
+Thanks!
+
+-Md. Sultanul Arefin
