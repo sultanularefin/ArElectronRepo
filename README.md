@@ -29,6 +29,8 @@ steps:
 
 5) finally press F12 to get a good view like this below.
 
+![Screen of this electron app](sultanul_arefin_electron.png)
+
 
 [Twitter](https://twitter.com/mdsultanul)
 
