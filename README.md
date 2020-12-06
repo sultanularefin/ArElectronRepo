@@ -39,3 +39,9 @@ steps:
 Thanks!
 
 -Md. Sultanul Arefin
+
+
+## changes at 12-06-2020:
+
+git rm -r --cached node_modules
+
