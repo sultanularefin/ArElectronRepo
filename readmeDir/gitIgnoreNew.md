@@ -1,3 +1,8 @@
+## https://raw.githubusercontent.com/electron/electron/master/.gitignore
+## new gitIgnore for electron projects::
+
+
+```text
 .DS_Store
 .env
 .gclient_done
@@ -69,3 +74,4 @@ ts-gen
 
 # Used to accelerate builds after sync
 patches/mtime-cache.json
+```
