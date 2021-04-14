@@ -1,4 +1,7 @@
-const {app, BrowserWindow,Tray} = require('electron')
+// const {app, BrowserWindow,Tray} = require('electron')
+
+const electron = require("electron");
+const { app, BrowserWindow, Tray } = electron;
 require('electron-debug')({ showDevTools: true });
 
 const path = require('path')
@@ -17,18 +20,34 @@ let win
 
 function createWindow() {
   
-    win = new BrowserWindow(
-        {
-           width: 300,
+    // win = new BrowserWindow(
+    //     {
+    //        width: 300,
+    //         height: 200,
+    //         // width: 600,
+    //         // height: 400,
+    //         frame: false,
+    //         icon: './appicon.png',
+    //         //resizable: false
+    //
+    //
+    //     })
+
+    const win = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true,
+            width: 300,
             height: 200,
             // width: 600,
             // height: 400,
             frame: false,
             icon: './appicon.png',
             //resizable: false
-           
 
-        })
+        },
+
+    })
+    win.show()
 
     // and load the index.html of the app.
     win.loadURL(url.format({
@@ -60,7 +79,27 @@ function createWindow() {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+// --new arefin april -15 --2021:: begins here..
+
+app.on("ready", () => {
+    const mainWindow = new BrowserWindow({
+        width: 1000,
+        height: 600,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+            enableRemoteModule: true,
+        },
+    });
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
+});
+
+// -- new arefin april -- 15 --2021 ends here...
+
+// old arefin
+// app.on('ready', createWindow)
+//old arefin
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
