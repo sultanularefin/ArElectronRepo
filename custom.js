@@ -48,6 +48,8 @@ function captureScreen() {
     moment().format();
     var now = moment().format("D-MMM-YY HH-mm");
 
+    console.log("now: ", now);
+
 
     var screenshot = require('desktop-screenshot');
 
@@ -84,8 +86,8 @@ function captureScreen() {
 
 
     var filecheck = path.join(dir, fileName);
-    console.log("filecheck");
-    console.log(filecheck);
+    console.log("filecheck", filecheck);
+    // console.log();
 
  
     if (fs.existsSync(filecheck)) {
